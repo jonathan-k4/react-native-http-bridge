@@ -24,5 +24,10 @@ module.exports = {
 
     respond: function (requestId, code, type, body) {
         Server.respond(requestId, code, type, body);
-    }
+	},
+	
+	get isRunning()
+	{
+		return Server.isRunning;
+	}
 }
