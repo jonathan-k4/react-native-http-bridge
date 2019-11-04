@@ -89,4 +89,14 @@ public class HttpServerModule extends ReactContextBaseJavaModule implements Life
             port = 0;
         }
     }
+
+	@ReactMethod isListening(Promise promise) {
+
+		boolean isListening = false;
+		if (_webServer != nil) {
+			isListening = server.isAlive();
+		}
+
+		resolve(isListening);
+	}
 }

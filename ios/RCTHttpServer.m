@@ -107,11 +107,12 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
 
 RCT_REMAP_METHOD(isListening, resolver: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
+    NSNumber* isListening = @NO;
   	if (_webServer != nil) {
-        resolver(_webServer.isListening);
+        isListening = (_webServer.isRunning) ? @YES : @NO;
     }
 
-	resolver(false);
+	resolve(isListening);
 }
 
 @end
