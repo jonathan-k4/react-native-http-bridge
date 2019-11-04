@@ -90,7 +90,8 @@ public class HttpServerModule extends ReactContextBaseJavaModule implements Life
         }
     }
 
-	@ReactMethod isListening(Promise promise) {
+	@ReactMethod 
+	public void isListening(Promise promise) {
 
 		boolean isListening = false;
 		if (_webServer != nil) {
