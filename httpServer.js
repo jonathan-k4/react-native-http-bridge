@@ -26,8 +26,8 @@ module.exports = {
         Server.respond(requestId, code, type, body);
 	},
 	
-	get isRunning()
+	isRunning: function()
 	{
-		return Server.isRunning;
+		return Server.isRunning();
 	}
 }
