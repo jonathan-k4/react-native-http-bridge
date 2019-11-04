@@ -104,13 +104,14 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
     [_requestResponses setObject:requestResponse forKey:requestId];
 }
 
-RCT_EXPORT_METHOD(isListening)
-{    
-    if (_webServer != nil) {
-        return _webServer.isListening;
+
+RCT_REMAP_METHOD(isListening, resolver: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+{
+  	if (_webServer != nil) {
+        resolver(_webServer.isListening);
     }
 
-	return false;
+	resolver(false);
 }
 
 @end
