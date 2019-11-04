@@ -105,7 +105,7 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
 }
 
 
-RCT_EXPORT_METHOD(isListening:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(isListening:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) 
 {
     NSNumber* isListening = @NO;
   	if (_webServer != nil) {
