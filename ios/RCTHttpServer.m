@@ -104,4 +104,13 @@ RCT_EXPORT_METHOD(respond: (NSString *) requestId
     [_requestResponses setObject:requestResponse forKey:requestId];
 }
 
+RCT_EXPORT_METHOD(isListening)
+{    
+    if (_webServer != nil) {
+        return _webServer.isListening;
+    }
+
+	return false;
+}
+
 @end
