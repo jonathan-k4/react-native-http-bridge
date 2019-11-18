@@ -5,6 +5,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.Promise;
 
 import java.io.IOException;
 
@@ -94,10 +95,10 @@ public class HttpServerModule extends ReactContextBaseJavaModule implements Life
 	public void isListening(Promise promise) {
 
 		boolean isListening = false;
-		if (_webServer != nil) {
+		if (server != null) {
 			isListening = server.isAlive();
 		}
 
-		resolve(isListening);
+		promise.resolve(isListening);
 	}
 }
